@@ -1,0 +1,70 @@
+/* إعدادات الخطوط والاتجاه */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #009688, #00796b);
+    color: #fff;
+    text-align: center;
+    direction: rtl;
+}
+
+.container {
+    max-width: 500px;
+    margin: 100px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.option {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 15px;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.option:hover {
+    background-color: #fff;
+    color: #00796b;
+    transform: scale(1.05);
+}
+
+@media (max-width: 600px) {
+    .container {
+        margin: 50px 20px;
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    .option {
+        font-size: 1rem;
+    }
+}

@@ -1,0 +1,358 @@
+/* for all pages*/
+
+
+
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    direction: rtl;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #e7f7f6;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #008080;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    text-align: right;
+    color: #333;
+}
+
+form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+}
+
+
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #008080;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+
+}
+
+.option {
+    padding: 15px 40px;
+    border: none;
+    outline: none;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 12px;
+}
+
+.option::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+
+}
+
+.option::before {
+    content: "";
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #ff00c8, #ff0000);
+
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 600%;
+    z-index: -1;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    filter: blur(8px);
+    animation: glowing 20s linear infinite;
+    transition: opacity .3s ease-in-out;
+    /* انتقال سلسل */
+    border-radius: 10px;
+    opacity: 1;
+}
+
+@keyframes glowing {
+    0% {
+
+
+        background-position: 0 0;
+    }
+
+    50% {
+
+        background-position: 400% 0;
+    }
+
+    100% {
+
+        background-position: 0 0;
+    }
+}
+
+
+
+.option:hover::before {
+    opacity: 1;
+}
+
+.option:active::after {
+    background: transparent;
+}
+
+.option:active {
+    color: #000;
+    font-weight: bold;
+}
+
+.options {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.option {
+    padding: 10px 20px;
+    background-color: #008080;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.option:hover {
+    background-color: #006666;
+}
+
+p {
+    margin-top: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Recommendation Page */
+/* قائمة الأطباء */
+.doctor-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.doctor {
+    flex: 0 1 calc(33.33% - 20px);
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.doctor img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 3px solid #ddd;
+    object-fit: cover;
+    margin-bottom: 10px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    position: relative;
+    z-index: 0;
+}
+
+/* التأثير عند التحويم */
+.doctor:hover img {
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    border-color: #00f7ff;
+}
+
+.doctor p {
+    font-size: 16px;
+    color: #555;
+    margin: 0;
+    transition: color 0.3s ease;
+}
+
+/* تغيير لون النص عند التحويم */
+.doctor:hover p {
+    color: #ff00bf;
+}
+
+/* تأثير التوهج عند الضغط */
+.doctor:active img {
+    transform: scale(1.2);
+    border-color: transparent;
+}
+
+/* إضافة تأثير التوهج */
+.doctor::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 120%;
+    height: 120%;
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #ff00c8, #ff0000);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    z-index: 0;
+    filter: blur(8px);
+    opacity: 0;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    background-size: 600%;
+    animation: glowing 20s linear infinite;
+}
+
+.doctor:active::after {
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 1;
+}
+
+/* أنيميشن توهج */
+@keyframes glowing {
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 400% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}
+
+
+/* 
+.doctors-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+img {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border: 3px solid black;
+    border-radius: 50%;
+}
+ */
+
+
+
+
+/* Settings Page */
+.settings-container {
+    padding: 20px;
+}
+
+.notification-settings,
+.profile-settings,
+.language-settings {
+    margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="email"],
+select {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+}
+
+select:hover {
+    background-color: aliceblue;
+}
+
+
+/* Bottom Navigation Bar */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    width: 455px;
+    background-color: #008080;
+    display: flex;
+    justify-content: space-around;
+
+    padding: 10px 0;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.bottom-nav .nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    font-size: 12px;
+
+}
+
+
+.bottom-nav .nav-item img {
+    width: 24px;
+    height: 24px;
+    margin-bottom: 5px;
+    border-radius: 50px;
+}
+
+.bottom-nav .nav-item p {
+    margin: 0;
+}
+
+
+.btn {
+
+    margin: 10px;
+}

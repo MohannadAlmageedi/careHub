@@ -1,0 +1,71 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+header {
+    background-color: #007BFF;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+main {
+    padding: 1rem;
+}
+
+.chat-container,
+.appointments-container {
+    max-width: 600px;
+    margin: 2rem auto;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+}
+
+.chat-form {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.chat-form input {
+    flex: 1;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.chat-form button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.appointments-list {
+    list-style: none;
+    padding: 0;
+}
+
+.appointments-list li {
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    background: #f0f0f0;
+    border-radius: 4px;
+}
+
+.dashboard-nav a {
+    display: block;
+    margin: 1rem 0;
+    padding: 0.5rem;
+    background: #007BFF;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 4px;
+}
